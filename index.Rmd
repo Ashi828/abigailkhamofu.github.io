@@ -1,0 +1,25 @@
+---
+title: "Abigail Khamofu"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+---
+
+<img src= "IMG_1355.JPG" style="width:40%; border:5px solid; color: maroon; margin-right: 20px" align="right">
+
+
+## Academics
+My name is Abigail Khamofu and I am 15 years old. I am a passionate and dedicated student currently attending [International Community School(ICS)](https://www.icsabuja.com/), where I excel academically while actively participating in extracurricular activities. I have a strong interest in singing and playing football. 
+
+## Other Achievements
+
+### Competitions
+I have participated in various musical competitions and achieved many certificates and awards for both solo and choir performances. In my former school, Rainbow College, I  showcased my leadership and teamwork skills by leading my girls football team to victory in different competitions as well as participating in the girls volleyball team.
+
+### Community Service
+My commitment to community service is evident through my involvement in providing for needy schools and orphanages. I do this driven by a desire to support those who may not have the same opportunities as others. Through my efforts, I have been able to provide food, clothes, and writing supplies for the children. Meeting those children has taught me many lessons such as contentment, selflessness, and compassion. Looking ahead, I plan to continue my work with orphanages and collaborate with local businesses to secure more resources for them, hopefully inspiring others to get involved as well.
+
+## Conclusion
+I believe my unique blend of compassion, creativity, athleticism, and academic dedication makes me a valuable member of any team I join. I’m eager to contribute positively to my community and take advantage of the opportunities available to further my educational and personal growth.
+

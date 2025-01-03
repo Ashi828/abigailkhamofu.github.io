@@ -1,0 +1,100 @@
+---
+title: "Projects"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+---
+In my 10th grade, I took Fundamentals of R Programming at [The Know Place](https://theknowplace.github.io) taught by [Ms Chiomah Ezeomah](https://chiomahezeomah.github.io).
+
+```{r, include=FALSE}
+library(dplyr)
+library(ggplot2)
+library(readxl)
+```
+
+```{r, include=FALSE}
+ncdc_data<-read_xlsx("C:/Users/USER/Documents/TKP_R_PROGRAMMING/ncdc_2024.xlsx", sheet=1)
+head(ncdc_data)
+```
+
+# Lineplot
+```{r, echo=FALSE, warning=FALSE}
+ggplot(ncdc_data,aes(x=epid.week,y=cases ,color=disease))+
+geom_line(size= 0.75)+
+   xlab("Week")+ theme(axis.title.x=element_text(vjust=0.5, size=10, face="bold"))+
+  ylab("Cases")+ theme(axis.title.y=element_text(vjust = 0.5, size = 10, face = "bold"))+
+labs(title = "Lineplot Showing the Number of Cases for Different Diseases")+
+  theme(plot.title = element_text(size=14, hjust=0.5, face= "bold"))+
+  labs(color = "Disease") + theme(legend.title = element_text(size = 10, face="bold", hjust = 0.5))+
+  scale_color_brewer(palette = "Dark2", label=c("Cholera", "CS Meningitis", "Lassa Fever", "Measles", "Mpox", "Yellow Fever"))+
+  theme_minimal()
+```
+
+The graph above was plotted in order to show the changes in the number cases of Cholera, CSM, Lassa Fever,Measles, Mpox, and Yellow Fever over 53 weeks in 2024.
+   
+# Boxplot
+```{r, echo=FALSE}
+ggplot(ncdc_data,aes(x=disease,y=cases ,color=disease))+
+geom_boxplot()+
+  xlab("Diseases")+ theme(axis.title.x=element_text(vjust=0.5, size=10, face="bold"))+
+  ylab("Cases")+ theme(axis.title.y=element_text(vjust = 0.5, size = 10, face = "bold"))+
+labs(title = "Boxplot Analysis of the Number of Cases per Disease",x="Disease",y="Cases")+
+  theme(plot.title = element_text(size=14, hjust=0.5, face= "bold"))+
+  labs(color = "Disease") + theme(legend.title = element_text(size = 10, face="bold", hjust = 0.5))+
+  scale_color_brewer(palette = "Dark2", label=c("Cholera", "CS Meningitis", "Lassa Fever", "Measles", "Mpox", "Yellow Fever"))+
+  scale_x_discrete(labels= c("Cholera","CS Meningitis", "Lassa Fever", "Measles","MPox","Yellow Fever"))+
+  theme_minimal()
+```
+
+The graph above is used to show the mean, median number of cases and the maximum and minimum number of cases throughout the year.
+
+
+```{r, include=FALSE}
+ncdc_data_cumulative_cases <- ncdc_data %>%
+  group_by(disease) %>%
+  mutate(cumulative.total=cumsum(cases))
+head(ncdc_data_cumulative_cases)
+```
+
+```{r, include=FALSE}
+ncdc.cumulative<- ncdc_data_cumulative_cases %>%
+filter(epid.week==53)
+```
+
+```{r,include=FALSE}
+head(ncdc.cumulative)
+```
+
+# Barplot
+```{r, echo=FALSE}
+ggplot(ncdc.cumulative, aes(x=disease, y=cumulative.total, color= disease, fill= disease))+
+  geom_bar(stat="identity", fill="#29AB87", color="purple")+
+  xlab("Diseases") + theme(axis.title.x= element_text(vjust=0.5, size=10, face="bold"))+
+  ylab("Cumulative Total")+ theme(axis.title.y = element_text(hjust = 0.5,size=10, face = "bold"))+
+  labs(title = "Bar Plot Showing the Cumulative Total of Cases of Diseases") + theme(plot.title = element_text(size=14, hjust=0.5, face= "bold"))+
+  theme_minimal()+
+scale_x_discrete(labels= c("Cholera","CS Meningitis", "Lassa Fever", "Measles","MPox","Yellow Fever")) #+coord_flip()
+```
+
+The figure above shows a bar plot that is used to show the total number of cases in 2024 for Cholera, CSM, Lassa Fever, Measles, Mpox, and Yellow Fever.
+
+# Diseases
+
+## Yellow Fever
+Yellow fever is a viral infection spread mainly by mosquito bites.Some symptoms are headache, vomiting, but in some serious cases, bleeding, failure of the kidney,liver.
+
+## MPox
+Mpox is a viral illness caused by the monkey pox virus, a species of the genus Orthopoxvirus. Symptoms include a rash that forms blisters and then crusts over, fever, and swollen lymph nodes. 
+
+## Measles
+Measles is a highly contagious, serious airborne disease caused by a virus that can lead to severe complications and death.Some symptoms are cough, runny nose, inflamed eyes, sore throat, fever, and a red, blotchy skin rash.
+
+## Lassa Fever
+Lassa fever is a severe viral illness that you can get from humans or rats infected with Lassa virus. Some symptoms include fever, weakness, headaches, vomiting, and muscle pains.
+
+## Cerebrospinal Meningitis
+CSM  is an infection of the fluid and membranes around the brain and spinal cord. Some symptoms include Light sensitivity, Drowsiness, Fatigue, Headache, Fever, Joint pain, Seizures, Stiff neck, Vomiting, and  Weight loss.
+
+## Cholera
+Cholera is an acute diarrheal infection caused by consuming food or water contaminated with the bacterium Vibrio cholerae. Key symptoms are diarrhea and dehydration. Rarely, shock and seizures may occur in severe cases.

@@ -1,0 +1,18 @@
+---
+title: "My Extracurricular Activities"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+---
+
+## Music
+   My main extracurricular activity is music. I sing a lot and I can play the guitar, the piano, and drums. Additionally, I write practical exams at MUSON centre for contemporary and classical singing. The starter grade is grade 3 and I am currently on grade 7. I had also participated in a singing competition and won first place! Although I prefer to sing solos for schools that I am enrolled in, I also sing in my school and church choir. This has helped build my confidence and stage presence.
+   
+<img src= "IMG_1403.JPG" style="width:40%; border:5px solid; color: maroon; margin-right: 20px" align="centre">
+   
+## Sports
+   In addition, I play a lot of sports in my free time. Football is my favorite sport to play and watch. I participate in competitions with my team and whether we win or lose, we always have a fun time. Tennis is another sport that I grew to love because of my father. He trained my siblings and I and I always saw watching tennis matches as an opportunity to bond with him. My participation in sports has taught me leadership and teamwork skills that I use to pursue my passions and interests in the classroom. 
+   
+<img src= "IMG_1404.JPG" style="width:40%; border:5px solid; color: maroon; margin-right: 20px" align="centre">
+   
